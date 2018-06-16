@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ProjectoSW</title>
+    <style>
+        input[type='submit'], button, [aria-label] {
+            cursor: pointer;
+        }
+
+        #spoiler {
+            display: none;
+        }
+
+        table {
+            font-family: Verdana, sans-serif;
+            border: 3px solid;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: darkgoldenrod;
+            color: black;
+        }
+
+        td {
+            border: 3px solid;
+            padding: 10px;
+        }
+
+        body {
+            background-color: darkseagreen
+        }
+    </style>
+</head>
+<body>
+    <h1>Item's CRUD List</h1>
+    <h3>Create Item</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="add-name" placeholder="New Item">
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="spoiler">
+        <h3>Update Item</h3>
+        <form class="my-form">
+            <input type="hidden" id="edit-id">
+            <input type="checkbox" id="edit-isComplete">
+            <input type="text" id="edit-name">
+            <input type="submit" value="Edit">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+    <div class="tabla">
+        <table>
+            <tr>
+                <th>Complete</th>
+                <th>Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tbody id="todos"></tbody>
+
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="site.js"></script>
+</body>
+</html>
