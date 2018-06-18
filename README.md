@@ -5,15 +5,15 @@ INSTRUCTIONS TO RUN THE APP ON DOCKER
 
 you must ensure that you have a file without an extension called “DockerFile” and that you must have this inside:
 
-FROM microsoft/aspnetcore-build:2.0 AS build-env
-WORKDIR /app
+FROM microsoft/aspnetcore-build:2.0 AS build-env                                                                              
+WORKDIR /app                                                                              
 
-COPY *.csproj ./
-RUN dotnet restore
+COPY *.csproj ./                                                                              
+RUN dotnet restore                                                                              
 
-COPY . ./
-RUN dotnet publish -c Release -o out
-
+COPY . ./                                                                              
+RUN dotnet publish -c Release -o out                                                                              
+                                                                              
 FROM microsoft/aspnetcore:2.0                                                                              
 WORKDIR /app                                                                                
 COPY --from=build-env /app/out .                                                                     
