@@ -20,6 +20,7 @@ COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "aspnetapp.dll"]
 
 
+
 an other file called “archivo.Dockerignore” and that you must have this inside:
 
 bin\
